@@ -1,0 +1,42 @@
+'''
+Programa con menu que da opciones de crear archivos, carpetas; mover archivos a carpetas y abrir otro codigo usando la biblioteca de subprocess para actuar como la terminal
+Beltran Gaspar Andres 13-05-2024
+'''
+import subprocess
+'''Funcion que ejecuta los comandos como si estuviera en la terminal del SO'''
+def Funcion(comando):
+    subprocess.run(comando,shell=True)
+
+Opcion = 0
+
+Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+#Ciclo que repite el menu 
+while Opcion !='0':
+    #creacion de un archivo .txt
+    if Opcion == '1':
+        Funcion('touch Promedio.txt')
+        Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+    #creacion de un directorio Calificaciones
+    elif Opcion == '2':
+        Funcion('mkdir Calificaciones')
+        Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+    #creacion de un directorio PrimerParcial
+    elif Opcion == '3':
+        Funcion('mkdir PrimerParcial')
+        Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+    #Mueve el archivo txt a la carpeta PrimerParcial
+    elif Opcion == '4':
+        Funcion('mv "Promedio.txt" "PrimerParcial"')
+        Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+    #Crea un archivo .py en la carpeta Calificaciones
+    elif Opcion == '5':
+        Funcion('touch Comandos.py')
+        Funcion('mv "Comandos.py" "Calificaciones"')
+        Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+    #ejecuta el codigo de la calculadora pasada
+    elif Opcion == '6':
+        import Calculadora
+        Opcion=str(input("elija una operacion a realizar:\n [1]Crear archivo Promedio.txt\n [2]Crear carpeta Calificacionesl\n [3]Crear carpeta PrimerParcial\n [4]mover Promedio.txt a PrimerParcial\n [5]Crear archivo Comandos.py dentro de Calificaciones\n [6]Calculadora\n [0]Salir\n"))
+    else:
+        print('adios')
+
